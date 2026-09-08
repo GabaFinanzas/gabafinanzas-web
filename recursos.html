@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Recursos y educación financiera | Gaba Finanzas</title>
+<meta name="description" content="Artículos y herramientas para entender tus inversiones: comisiones, ETFs, diversificación y más. Descarga plantillas gratuitas para controlar tu cartera.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><style>:root{--bg:#FBFBF9;--ink:#1C2530;--navy:#16324F;--navy-d:#0F2A45;--gold:#C8A15A;--muted:#6B7280;--tint:#EDF1F4;--line:#E4E8EB;--white:#fff;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--wrap:1120px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.narrow{max-width:720px}
+h1,h2,h3{font-family:var(--serif);color:var(--navy);font-weight:600;line-height:1.18;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+.rule{width:44px;height:2px;background:var(--gold);margin-bottom:20px;border:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-weight:500;font-size:15px;padding:12px 22px;border-radius:10px;border:1px solid transparent;cursor:pointer;transition:.18s}
+.btn-primary{background:var(--navy);color:var(--white)}.btn-primary:hover{background:var(--navy-d)}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-ghost{background:transparent;color:var(--navy);border-color:var(--line)}.btn-ghost:hover{border-color:var(--navy)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+header{position:sticky;top:0;z-index:50;background:rgba(251,251,249,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{font-family:var(--serif);font-size:22px;font-weight:700}.logo b{color:var(--navy)}.logo span{color:var(--gold)}
+.navlinks{display:flex;gap:26px}.navlinks a{font-size:15px;color:var(--ink)}.navlinks a:hover{color:var(--navy)}
+.nav .btn{padding:9px 18px}
+.hamb{display:none;background:none;border:0;cursor:pointer;padding:8px}.hamb span{display:block;width:22px;height:2px;background:var(--navy);margin:4px 0}
+.mobile{display:none}
+.crumb{font-size:13.5px;color:var(--muted);padding:22px 0 0}.crumb a:hover{color:var(--navy)}
+.page-head{padding:26px 0 40px}.page-head h1{font-size:clamp(30px,5vw,46px);max-width:20ch}
+.page-head p{color:var(--muted);font-size:18px;margin-top:16px;max-width:60ch}
+section{padding:26px 0}
+.grid{display:grid;gap:22px}.cols-3{grid-template-columns:repeat(3,1fr)}.cols-2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column}
+.card .tag{font-size:12.5px;color:var(--gold);font-weight:600;margin-bottom:12px}
+.card h3{font-size:20px;margin-bottom:10px}.card p{font-size:14.5px;color:#4B5560;flex:1}
+.card .more{margin-top:16px;font-weight:600;color:var(--navy);font-size:14.5px}
+.card.soon{opacity:.62}
+.tools{background:var(--tint);border-radius:16px;padding:32px;margin-top:10px}
+.tool{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid #DBE2E7}
+.tool:last-child{border:0}.tool h4{font-family:var(--serif);color:var(--navy);font-size:17px}.tool p{font-size:13.5px;color:#4B5560}
+article.post{padding:6px 0 10px}
+article.post .meta{font-size:13.5px;color:var(--muted);margin-bottom:26px;border-bottom:1px solid var(--line);padding-bottom:20px}
+article.post h2{font-size:26px;margin:38px 0 14px}
+article.post h3{font-size:19px;margin:26px 0 10px}
+article.post p{font-size:17px;color:#28323C;margin-bottom:16px;line-height:1.75}
+article.post ul{margin:0 0 18px 22px}article.post li{font-size:17px;color:#28323C;margin-bottom:9px;line-height:1.7}
+article.post strong{color:var(--navy)}
+.lead-box{background:var(--tint);border-radius:14px;padding:26px;margin:30px 0}
+.lead-box h4{font-family:var(--serif);color:var(--navy);font-size:19px;margin-bottom:8px}
+.lead-box p{font-size:15px;color:#3A4652;margin-bottom:16px}
+.faq details{border:1px solid var(--line);border-radius:12px;background:var(--white);margin-bottom:12px;padding:4px 22px}
+.faq summary{font-family:var(--serif);color:var(--navy);font-size:18px;font-weight:600;cursor:pointer;padding:18px 0;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';float:right;color:var(--gold);font-size:22px;line-height:1}
+.faq details[open] summary::after{content:'\2013'}
+.faq details p{font-size:15.5px;color:#3A4652;padding:0 0 20px;line-height:1.7}
+.disclaimer{background:#F2EFE8;border-top:1px solid #E7E1D4;border-bottom:1px solid #E7E1D4;margin-top:40px}
+.disclaimer p{font-size:13px;color:#6C6455;line-height:1.6;padding:20px 0}
+footer{padding:50px 0 38px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;margin-bottom:34px}
+.foot h4{font-size:13px;color:var(--muted);font-weight:600;margin-bottom:14px}
+.foot a{display:block;font-size:14.5px;color:#4B5560;margin-bottom:9px}.foot a:hover{color:var(--navy)}
+.foot .brand p{font-size:14px;color:var(--muted);margin-top:10px;max-width:34ch}
+.foot-bottom{border-top:1px solid var(--line);padding-top:20px;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:900px){.cols-3{grid-template-columns:1fr 1fr}.foot{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.navlinks,.nav>.btn{display:none}.hamb{display:block}.cols-3,.cols-2,.foot{grid-template-columns:1fr}
+.mobile.open{display:block;background:var(--bg);border-top:1px solid var(--line)}.mobile a{display:block;padding:15px 24px;border-bottom:1px solid var(--line)}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}</style></head><body>
+<header><div class="wrap nav"><a class="logo" href="index.html"><b>Gaba</b> <span>Finanzas</span></a><nav class="navlinks"><a href="servicios.html">Servicios</a><a href="index.html#como-funciona">Cómo funciona</a><a href="recursos.html">Recursos</a><a href="faq.html">FAQ</a></nav><a class="btn btn-primary" href="index.html#contacto">Solicitar análisis</a><button class="hamb" id="hamb" aria-label="Menú"><span></span><span></span><span></span></button></div><div class="mobile" id="mobile"><a href="servicios.html">Servicios</a><a href="index.html#como-funciona">Cómo funciona</a><a href="recursos.html">Recursos</a><a href="faq.html">FAQ</a><a href="index.html#contacto">Solicitar análisis</a></div></header>
+<div class="wrap"><div class="crumb"><a href="index.html">Inicio</a> / Recursos</div></div>
+<div class="wrap page-head"><hr class="rule"><h1>Aprende a entender tus inversiones</h1>
+<p>Artículos claros y herramientas prácticas para que tomes tus propias decisiones con más criterio. Sin tecnicismos innecesarios.</p></div>
+<section class="wrap"><div class="grid cols-3">
+<a class="card" href="articulo-comisiones-fondos.html"><span class="tag">Costes</span><h3>¿Cuánto te cobra tu banco por un fondo?</h3><p>Cómo encontrar la comisión (TER) que pagas y por qué una diferencia pequeña pesa tanto a largo plazo.</p><span class="more">Leer artículo</span></a>
+<a class="card" href="articulo-etf-vs-fondo.html"><span class="tag">Productos</span><h3>ETF vs fondo indexado: diferencias</h3><p>Qué los distingue en costes, forma de comprar y fiscalidad, y qué implica cada uno.</p><span class="more">Leer artículo</span></a>
+<div class="card soon"><span class="tag">Diversificación</span><h3>Qué es realmente la diversificación</h3><p>Por qué tener muchos productos no siempre significa estar diversificado.</p><span class="more">Próximamente</span></div>
+<div class="card soon"><span class="tag">Análisis</span><h3>Cómo analizar tu cartera paso a paso</h3><p>Qué mirar: costes, concentración, exposición real y liquidez.</p><span class="more">Próximamente</span></div>
+<div class="card soon"><span class="tag">Empezar</span><h3>¿Cuánto dinero necesitas para invertir?</h3><p>Desmontamos el mito del capital mínimo para empezar.</p><span class="more">Próximamente</span></div>
+<div class="card soon"><span class="tag">Jubilación</span><h3>Empezar a planificar tu futuro financiero</h3><p>Por qué el tiempo es tu mayor aliado y cómo pensarlo desde hoy.</p><span class="more">Próximamente</span></div>
+</div></section>
+<section class="wrap"><div class="tools">
+<hr class="rule"><h2 style="font-size:26px;margin-bottom:6px">Herramientas descargables</h2>
+<p style="color:#4B5560;font-size:15px;margin-bottom:16px">Plantillas gratuitas para llevar tus finanzas con orden. Uso educativo; no son asesoramiento.</p>
+<div class="tool"><div><h4>Seguimiento de cartera</h4><p>Controla el reparto, los costes y la exposición real de tu cartera.</p></div><a class="btn btn-gold" href="#">Descargar</a></div>
+<div class="tool"><div><h4>Impacto de las comisiones</h4><p>Calcula cuánto te cuestan las comisiones a largo plazo.</p></div><a class="btn btn-gold" href="#">Descargar</a></div>
+<div class="tool"><div><h4>Flujo de caja y ahorro</h4><p>Ingresos, gastos y tu tasa de ahorro mes a mes.</p></div><a class="btn btn-gold" href="#">Descargar</a></div>
+<div class="tool"><div><h4>Planificador de objetivos</h4><p>Cuánto ahorrar cada mes para llegar a tus metas.</p></div><a class="btn btn-gold" href="#">Descargar</a></div>
+</div></section>
+<div class="disclaimer"><div class="wrap"><p>Gaba Finanzas es un proyecto de análisis y formación financiera. No está registrada en la CNMV y no presta el servicio de asesoramiento en materia de inversión. Sus contenidos tienen finalidad informativa y educativa, no constituyen una recomendación personalizada de inversión y no garantizan resultados. Invertir conlleva riesgos, incluida la posible pérdida de capital.</p></div></div><footer><div class="wrap"><div class="foot"><div class="brand"><a class="logo" href="index.html"><b>Gaba</b> <span>Finanzas</span></a><p>Análisis y formación financiera para que entiendas tu dinero y decidas con criterio.</p></div><div><h4>Navegación</h4><a href="servicios.html">Servicios</a><a href="index.html#como-funciona">Cómo funciona</a><a href="recursos.html">Recursos</a><a href="faq.html">FAQ</a></div><div><h4>Legal</h4><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Política de privacidad</a><a href="cookies.html">Política de cookies</a></div></div><div class="foot-bottom"><span>© 2026 Gaba Finanzas</span><span>Análisis y formación financiera · España</span></div></div></footer><script>const h=document.getElementById("hamb"),m=document.getElementById("mobile");if(h)h.addEventListener("click",()=>m.classList.toggle("open"));</script><div id="gf-ck" role="dialog" aria-label="Aviso de cookies" style="display:none;position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:520px;margin:0 auto;background:#fff;border:1px solid #E4E8EB;border-radius:14px;box-shadow:0 10px 40px rgba(22,50,79,.18);padding:20px 22px;font-family:'Inter',system-ui,sans-serif">
+<p style="margin:0 0 14px;font-size:14px;color:#28323C;line-height:1.55">Usamos cookies anal&iacute;ticas (Google Analytics) para entender c&oacute;mo se usa la web. Solo se activan si las aceptas. <a href="cookies.html" style="color:#16324F;font-weight:600">M&aacute;s informaci&oacute;n</a>.</p>
+<div style="display:flex;gap:10px;justify-content:flex-end">
+<button id="gf-rej" style="cursor:pointer;font:500 14px Inter,sans-serif;padding:9px 16px;border-radius:9px;border:1px solid #E4E8EB;background:#fff;color:#16324F">Rechazar</button>
+<button id="gf-acc" style="cursor:pointer;font:500 14px Inter,sans-serif;padding:9px 16px;border-radius:9px;border:0;background:#C8A15A;color:#16324F">Aceptar</button>
+</div></div>
+<script>
+(function(){var GA_ID="G-XXXXXXXXXX";/* <-- Sustituye por tu ID de Google Analytics */
+function gv(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function sv(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+function loadGA(){if(!GA_ID||GA_ID.indexOf("XXXX")!==-1)return;var s=document.createElement("script");s.async=1;s.src="https://www.googletagmanager.com/gtag/js?id="+GA_ID;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag("js",new Date());gtag("config",GA_ID);}
+var el=document.getElementById("gf-ck"),c=gv("gf-consent");
+if(c==="accepted"){loadGA();}else if(c!=="rejected"&&el){el.style.display="block";}
+var a=document.getElementById("gf-acc"),r=document.getElementById("gf-rej");
+if(a)a.onclick=function(){sv("gf-consent","accepted");if(el)el.style.display="none";loadGA();};
+if(r)r.onclick=function(){sv("gf-consent","rejected");if(el)el.style.display="none";};})();
+</script>
+</body></html>
