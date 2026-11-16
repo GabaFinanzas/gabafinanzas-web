@@ -3,214 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gaba Finanzas | Análisis y planificación financiera</title>
+<title>Gaba Finanzas | Análisis y formación financiera</title>
 <meta name="description" content="Analiza tus inversiones, entiende la estructura de tu cartera y toma decisiones con más criterio. Análisis claro y formación financiera basada en datos.">
-<meta property="og:title" content="Gaba Finanzas | Análisis y planificación financiera">
-<meta property="og:description" content="Entiende tu cartera: costes, diversificación, riesgo y exposición, explicado en claro. Formación financiera basada en datos.">
+<link rel="canonical" href="https://www.gabafinanzas.com/">
 <meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#FBFBF9; --ink:#1C2530; --navy:#16324F; --navy-d:#0F2A45; --gold:#C8A15A;
-    --muted:#6B7280; --tint:#EDF1F4; --line:#E4E8EB; --white:#fff;
-    --serif:'Playfair Display',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
-    --wrap:1120px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-  h1,h2,h3{font-family:var(--serif);color:var(--navy);font-weight:600;line-height:1.15;letter-spacing:-.01em}
-  a{color:inherit;text-decoration:none}
-  p{max-width:64ch}
-  .rule{width:44px;height:2px;background:var(--gold);margin-bottom:20px;border:0}
-  .btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:500;
-    font-size:15px;padding:13px 24px;border-radius:10px;border:1px solid transparent;cursor:pointer;transition:.18s ease}
-  .btn-primary{background:var(--navy);color:var(--white)}
-  .btn-primary:hover{background:var(--navy-d)}
-  .btn-ghost{background:transparent;color:var(--navy);border-color:var(--line)}
-  .btn-ghost:hover{border-color:var(--navy);background:var(--white)}
-  :focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-
-  /* Header */
-  header{position:sticky;top:0;z-index:50;background:rgba(251,251,249,.85);backdrop-filter:blur(10px);
-    border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s}
-  header.scrolled{border-color:var(--line);box-shadow:0 1px 12px rgba(22,50,79,.05)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-  .logo{font-family:var(--serif);font-size:23px;font-weight:700;letter-spacing:-.01em}
-  .logo b{color:var(--navy);font-weight:700}
-  .logo span{color:var(--gold);font-weight:700}
-  .navlinks{display:flex;align-items:center;gap:30px}
-  .navlinks a{font-size:15px;color:var(--ink);font-weight:450;transition:color .15s}
-  .navlinks a:hover{color:var(--navy)}
-  .pronto{font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:1px 8px;margin-left:5px;vertical-align:middle}
-  .nav-cta{display:flex;align-items:center;gap:14px}
-  .hamb{display:none;background:none;border:0;cursor:pointer;padding:8px}
-  .hamb span{display:block;width:22px;height:2px;background:var(--navy);margin:4px 0;transition:.2s}
-  .mobile{display:none}
-
-  /* Hero */
-  .hero{padding:96px 0 72px}
-  .hero h1{font-size:clamp(38px,6vw,64px);max-width:16ch}
-  .hero .lead{font-size:clamp(17px,2vw,20px);color:#37424E;max-width:58ch;margin:24px 0 34px}
-  .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
-  .trust{display:flex;flex-wrap:wrap;gap:10px 12px;margin-top:40px}
-  .trust li{list-style:none;font-size:13.5px;color:var(--navy);background:var(--tint);
-    padding:7px 14px;border-radius:20px;font-weight:500}
-
-  /* Sections */
-  section{padding:80px 0}
-  .sec-head{max-width:60ch;margin-bottom:44px}
-  .sec-head h2{font-size:clamp(28px,4vw,40px)}
-  .sec-head p{color:var(--muted);margin-top:14px;font-size:17px}
-  .band{background:var(--tint)}
-
-  /* Problem cards */
-  .grid{display:grid;gap:20px}
-  .cols-4{grid-template-columns:repeat(4,1fr)}
-  .cols-3{grid-template-columns:repeat(3,1fr)}
-  .card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:26px}
-  .card h3{font-size:19px;margin-bottom:9px}
-  .card p{font-size:14.5px;color:#4B5560}
-  .card .k{font-family:var(--serif);color:var(--gold);font-size:15px;font-weight:600;display:block;margin-bottom:12px}
-
-  /* Services */
-  .svc{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:32px;display:flex;flex-direction:column}
-  .svc h3{font-size:22px;margin-bottom:12px}
-  .svc p{font-size:15px;color:#4B5560;flex:1}
-  .svc .tag{font-size:13px;color:var(--gold);font-weight:600;margin-bottom:16px;font-family:var(--sans)}
-  .svc a{margin-top:20px;font-weight:600;color:var(--navy);font-size:15px}
-
-  /* Steps */
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:s}
-  .step{position:relative;padding-top:22px;border-top:2px solid var(--line)}
-  .step .n{font-family:var(--serif);font-size:16px;color:var(--gold);font-weight:700}
-  .step h3{font-size:18px;margin:8px 0 8px}
-  .step p{font-size:14px;color:#4B5560}
-
-  /* Example dashboard */
-  .dash{background:var(--navy);color:#EAF0F5;border-radius:20px;padding:40px;position:relative;overflow:hidden}
-  .dash .ficticio{position:absolute;top:18px;right:20px;font-size:11.5px;color:#9FB4C6;border:1px solid #2C4A63;padding:3px 10px;border-radius:20px}
-  .dash-top{display:flex;flex-wrap:wrap;gap:36px;align-items:flex-end;margin-bottom:34px}
-  .dash-big{font-family:var(--serif);font-size:46px;font-weight:600;color:#fff;line-height:1}
-  .dash-label{font-size:13px;color:#9FB4C6;margin-bottom:6px}
-  .dash-metric .v{font-family:var(--serif);font-size:26px;color:var(--gold);font-weight:600}
-  .alloc{display:flex;flex-direction:column;gap:13px}
-  .alloc-row{display:grid;grid-template-columns:120px 1fr 44px;align-items:center;gap:14px;font-size:13.5px}
-  .bar{height:9px;background:#24425C;border-radius:6px;overflow:hidden}
-  .bar i{display:block;height:100%;background:var(--gold);border-radius:6px;width:0;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
-  .alloc-row .pct{text-align:right;color:#CFDCE6}
-
-  /* Calculator */
-  .calc{display:grid;grid-template-columns:1fr 1fr;gap:36px;background:var(--white);border:1px solid var(--line);border-radius:20px;padding:38px}
-  .field{margin-bottom:20px}
-  .field label{display:block;font-size:13.5px;color:var(--muted);margin-bottom:7px;font-weight:500}
-  .field input{width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);padding:12px 14px;
-    border:1px solid var(--line);border-radius:10px;background:#FCFCFB}
-  .field input:focus{border-color:var(--navy);outline:none}
-  .calc-out{background:var(--tint);border-radius:16px;padding:30px;display:flex;flex-direction:column;justify-content:center}
-  .out-row{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid #DAE1E6}
-  .out-row:last-of-type{border:0}
-  .out-row .lbl{font-size:14px;color:#4B5560}
-  .out-row .val{font-family:var(--serif);font-size:22px;color:var(--navy);font-weight:600}
-  .out-row.total .val{font-size:30px;color:var(--gold)}
-  .warn{font-size:12.5px;color:var(--muted);margin-top:16px;line-height:1.5}
-
-  /* Transparency */
-  .trans-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 30px;margin-top:8px}
-  .trans-list li{list-style:none;display:flex;gap:12px;align-items:flex-start;font-size:16px;color:var(--ink)}
-  .check{flex:none;width:22px;height:22px;border-radius:50%;background:var(--navy);color:#fff;display:flex;
-    align-items:center;justify-content:center;font-size:12px;margin-top:2px}
-
-  /* Contact */
-  .contact{background:var(--navy);color:#EAF0F5;border-radius:22px;padding:52px}
-  .contact h2{color:#fff}
-  .contact .lead{color:#B9C8D4;margin:14px 0 30px;font-size:17px}
-  .form{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:620px}
-  .form .full{grid-column:1/-1}
-  .form label{display:block;font-size:13px;color:#9FB4C6;margin-bottom:6px}
-  .form input,.form select,.form textarea{width:100%;font-family:var(--sans);font-size:15px;padding:11px 13px;
-    border-radius:9px;border:1px solid #2C4A63;background:#12293F;color:#EAF0F5}
-  .form textarea{min-height:96px;resize:vertical}
-  .contact .aside{font-size:14px;color:#9FB4C6;margin-top:18px}
-  .contact .aside a{color:var(--gold);font-weight:500}
-
-  /* Disclaimer + footer */
-  .disclaimer{background:#F2EFE8;border-top:1px solid #E7E1D4;border-bottom:1px solid #E7E1D4}
-  .disclaimer p{max-width:none;font-size:13px;color:#6C6455;line-height:1.6}
-  footer{padding:56px 0 40px}
-  .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;margin-bottom:36px}
-  .foot h4{font-size:13px;color:var(--muted);font-weight:600;margin-bottom:14px;font-family:var(--sans)}
-  .foot a{display:block;font-size:14.5px;color:#4B5560;margin-bottom:9px}
-  .foot a:hover{color:var(--navy)}
-  .foot .brand p{font-size:14px;color:var(--muted);margin-top:10px;max-width:34ch}
-  .foot-bottom{border-top:1px solid var(--line);padding-top:22px;font-size:13px;color:var(--muted);
-    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-
-  .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
-  .reveal.in{opacity:1;transform:none}
-
-  @media (max-width:900px){
-    .cols-4{grid-template-columns:repeat(2,1fr)}
-    .steps{grid-template-columns:repeat(2,1fr)}
-    .calc{grid-template-columns:1fr}
-    .foot{grid-template-columns:1fr 1fr}
-  }
-  @media (max-width:680px){
-    .navlinks{display:none}
-    .nav-cta .btn{display:none}
-    .hamb{display:block}
-    .cols-4,.cols-3,.steps,.trans-list,.form{grid-template-columns:1fr}
-    .dash{padding:28px}
-    .contact{padding:34px}
-    .foot{grid-template-columns:1fr}
-    section{padding:60px 0}
-    .hero{padding:64px 0 52px}
-    .mobile.open{display:block;border-top:1px solid var(--line);background:var(--bg)}
-    .mobile a{display:block;padding:15px 24px;border-bottom:1px solid var(--line);font-size:16px}
-  }
-  @media (prefers-reduced-motion:reduce){
-    *{transition:none!important;scroll-behavior:auto}
-    .reveal{opacity:1;transform:none}
-  }
-</style>
+<meta property="og:site_name" content="Gaba Finanzas">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://www.gabafinanzas.com/">
+<meta property="og:title" content="Gaba Finanzas | Análisis y formación financiera">
+<meta property="og:description" content="Entiende tu cartera: costes, diversificación, riesgo y exposición, explicado en claro. Formación financiera basada en datos.">
+<meta property="og:image" content="https://www.gabafinanzas.com/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#16324F">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<script>document.documentElement.className+=' js'</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://www.gabafinanzas.com/#website", "url": "https://www.gabafinanzas.com/", "name": "Gaba Finanzas", "description": "Analiza tus inversiones, entiende la estructura de tu cartera y toma decisiones con más criterio. Análisis claro y formación financiera basada en datos.", "inLanguage": "es-ES", "publisher": {"@id": "https://www.gabafinanzas.com/#org"}}, {"@type": "Organization", "@id": "https://www.gabafinanzas.com/#org", "name": "Gaba Finanzas", "url": "https://www.gabafinanzas.com/", "logo": "https://www.gabafinanzas.com/assets/img/icon-512.png", "founder": {"@type": "Person", "name": "Albert Gabaldà Rodríguez", "url": "https://www.gabafinanzas.com/sobre.html"}}]}</script>
 </head>
-<body>
-
+<body class="home">
+<a class="skip" href="#contenido">Saltar al contenido</a>
 <header id="hdr">
   <div class="wrap nav">
-    <a class="logo" href="#inicio"><b>Gaba</b> <span>Finanzas</span></a>
-    <nav class="navlinks">
-      <a href="#servicios">Servicios</a>
+    <a class="logo" href="index.html" aria-label="Gaba Finanzas, inicio"><b>Gaba</b> <span>Finanzas</span></a>
+    <nav class="navlinks" aria-label="Principal">
+      <a href="servicios.html">Servicios</a>
       <a href="#como-funciona">Cómo funciona</a>
-      <a href="#ejemplo">Ejemplo</a>
+      <a href="sobre.html">Sobre</a>
       <a href="recursos.html">Recursos</a>
       <a href="faq.html">FAQ</a>
     </nav>
-    <div class="nav-cta">
-      <span style="font-size:14px;color:var(--muted)">Área de cliente<span class="pronto">pronto</span></span>
-      <a class="btn btn-primary" href="#contacto">Solicitar análisis</a>
-    </div>
-    <button class="hamb" id="hamb" aria-label="Abrir menú" aria-expanded="false">
+    <a class="btn btn-primary" href="#contacto">Solicitar análisis</a>
+    <button class="hamb" id="hamb" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile">
       <span></span><span></span><span></span>
     </button>
   </div>
-  <div class="mobile" id="mobile">
-    <a href="#servicios">Servicios</a>
+  <nav class="mobile" id="mobile" aria-label="Menú móvil">
+    <a href="servicios.html">Servicios</a>
     <a href="#como-funciona">Cómo funciona</a>
-    <a href="#ejemplo">Ejemplo</a>
+    <a href="sobre.html">Sobre</a>
     <a href="recursos.html">Recursos</a>
     <a href="faq.html">FAQ</a>
-    <a href="#contacto" style="color:var(--navy);font-weight:600">Solicitar análisis</a>
-  </div>
+    <a class="cta" href="#contacto">Solicitar análisis</a>
+  </nav>
 </header>
 
-<main id="inicio">
-
-  <!-- HERO -->
-  <section class="hero">
+<main id="contenido">
+<!-- HERO -->
+  <section class="hero" id="inicio">
     <div class="wrap">
       <hr class="rule">
       <h1>Entiende tu dinero. Invierte con criterio.</h1>
@@ -258,7 +103,7 @@
           <span class="tag">Análisis</span>
           <h3>Check-up de cartera</h3>
           <p>Un análisis descriptivo de tu cartera: costes, diversificación, concentración y exposición geográfica real, explicado en claro. Las decisiones son siempre tuyas.</p>
-          <a href="#contacto">Solicitar análisis</a>
+          <a href="servicios.html">Ver qué incluye</a>
         </div>
         <div class="svc reveal">
           <span class="tag">Formación</span>
@@ -270,7 +115,7 @@
           <span class="tag">Herramientas</span>
           <h3>Plantillas y herramientas</h3>
           <p>Plantillas para controlar tu cartera, tus finanzas mensuales y tus objetivos, y para comparar el coste real de tus fondos.</p>
-          <a href="recursos.html">Descargar</a>
+          <a href="recursos.html">Ver herramientas</a>
         </div>
       </div>
     </div>
@@ -317,11 +162,11 @@
           </div>
         </div>
         <div class="alloc" id="alloc">
-          <div class="alloc-row"><span>Renta variable</span><div class="bar"><i data-w="55"></i></div><span class="pct">55%</span></div>
-          <div class="alloc-row"><span>Inmobiliario</span><div class="bar"><i data-w="15"></i></div><span class="pct">15%</span></div>
-          <div class="alloc-row"><span>Liquidez</span><div class="bar"><i data-w="15"></i></div><span class="pct">15%</span></div>
-          <div class="alloc-row"><span>Renta fija</span><div class="bar"><i data-w="10"></i></div><span class="pct">10%</span></div>
-          <div class="alloc-row"><span>Cripto</span><div class="bar"><i data-w="5"></i></div><span class="pct">5%</span></div>
+          <div class="alloc-row"><span>Renta variable</span><div class="bar"><i style="width:55%"></i></div><span class="pct">55%</span></div>
+          <div class="alloc-row"><span>Inmobiliario</span><div class="bar"><i style="width:15%"></i></div><span class="pct">15%</span></div>
+          <div class="alloc-row"><span>Liquidez</span><div class="bar"><i style="width:15%"></i></div><span class="pct">15%</span></div>
+          <div class="alloc-row"><span>Renta fija</span><div class="bar"><i style="width:10%"></i></div><span class="pct">10%</span></div>
+          <div class="alloc-row"><span>Cripto</span><div class="bar"><i style="width:5%"></i></div><span class="pct">5%</span></div>
         </div>
       </div>
     </div>
@@ -337,12 +182,12 @@
       </div>
       <div class="calc reveal">
         <div>
-          <div class="field"><label for="ci">Capital inicial (€)</label><input id="ci" type="number" value="5000" min="0"></div>
-          <div class="field"><label for="ap">Aportación mensual (€)</label><input id="ap" type="number" value="300" min="0"></div>
-          <div class="field"><label for="an">Años</label><input id="an" type="number" value="20" min="1" max="60"></div>
-          <div class="field"><label for="re">Rentabilidad anual estimada (%)</label><input id="re" type="number" value="5" step="0.1"></div>
+          <div class="field"><label for="ci">Capital inicial (€)</label><input id="ci" type="number" inputmode="decimal" value="5000" min="0" step="100"></div>
+          <div class="field"><label for="ap">Aportación mensual (€)</label><input id="ap" type="number" inputmode="decimal" value="300" min="0" step="10"></div>
+          <div class="field"><label for="an">Años</label><input id="an" type="number" inputmode="numeric" value="20" min="1" max="60"></div>
+          <div class="field"><label for="re">Rentabilidad anual estimada (%)</label><input id="re" type="number" inputmode="decimal" value="5" min="-50" max="50" step="0.1"></div>
         </div>
-        <div class="calc-out">
+        <div class="calc-out" aria-live="polite">
           <div class="out-row"><span class="lbl">Capital aportado</span><span class="val" id="o-ap">—</span></div>
           <div class="out-row"><span class="lbl">Rendimiento estimado</span><span class="val" id="o-re">—</span></div>
           <div class="out-row total"><span class="lbl">Capital final estimado</span><span class="val" id="o-to">—</span></div>
@@ -361,12 +206,12 @@
         <p>No creemos en las rentabilidades garantizadas ni en las fórmulas mágicas. Invertir implica riesgo, y cualquier decisión debe entenderse antes de tomarse.</p>
       </div>
       <ul class="trans-list reveal">
-        <li><span class="check">✓</span> Sin rentabilidades garantizadas</li>
-        <li><span class="check">✓</span> Sin promesas de hacerse rico</li>
-        <li><span class="check">✓</span> Riesgos explicados en claro</li>
-        <li><span class="check">✓</span> Costes transparentes</li>
-        <li><span class="check">✓</span> Información basada en datos</li>
-        <li><span class="check">✓</span> Las decisiones son siempre tuyas</li>
+        <li><span class="check" aria-hidden="true">✓</span> Sin rentabilidades garantizadas</li>
+        <li><span class="check" aria-hidden="true">✓</span> Sin promesas de hacerse rico</li>
+        <li><span class="check" aria-hidden="true">✓</span> Riesgos explicados en claro</li>
+        <li><span class="check" aria-hidden="true">✓</span> Costes transparentes</li>
+        <li><span class="check" aria-hidden="true">✓</span> Información basada en datos</li>
+        <li><span class="check" aria-hidden="true">✓</span> Las decisiones son siempre tuyas</li>
       </ul>
     </div>
   </section>
@@ -377,12 +222,12 @@
       <div class="contact reveal">
         <hr class="rule">
         <h2>¿Sabes cuánto riesgo estás asumiendo?</h2>
-        <p class="lead">Solicita tu análisis y descubre si tu cartera está alineada con tus objetivos.</p>
-        <form class="form" onsubmit="return handleForm(event)">
-          <div><label for="f-nom">Nombre</label><input id="f-nom" required></div>
-          <div><label for="f-mail">Email</label><input id="f-mail" type="email" required></div>
-          <div><label for="f-pat">Patrimonio aproximado</label>
-            <select id="f-pat">
+        <p class="lead">Solicita tu análisis y descubre qué tienes, cuánto pagas y cuánto riesgo asumes.</p>
+        <form class="form" id="contact-form" method="post" action="#contacto">
+          <div><label for="f-nom">Nombre</label><input id="f-nom" name="nombre" autocomplete="name" required></div>
+          <div><label for="f-mail">Email</label><input id="f-mail" name="email" type="email" autocomplete="email" required></div>
+          <div><label for="f-pat">Patrimonio aproximado (opcional)</label>
+            <select id="f-pat" name="patrimonio">
               <option>Prefiero no indicarlo</option>
               <option>Menos de 25.000 €</option>
               <option>25.000 – 100.000 €</option>
@@ -390,44 +235,47 @@
               <option>Más de 300.000 €</option>
             </select>
           </div>
-          <div><label for="f-obj">Objetivo principal</label><input id="f-obj" placeholder="Ahorro, jubilación, entender mi cartera…"></div>
-          <div class="full"><label for="f-msg">Mensaje</label><textarea id="f-msg"></textarea></div>
-          <div class="full"><button class="btn btn-primary" type="submit" style="background:var(--gold);color:var(--navy);width:auto">Enviar solicitud</button></div>
+          <div><label for="f-obj">Objetivo principal</label><input id="f-obj" name="objetivo" placeholder="Ahorro, jubilación, entender mi cartera…"></div>
+          <div class="full"><label for="f-msg">Mensaje</label><textarea id="f-msg" name="mensaje"></textarea></div>
+          <div class="hp" aria-hidden="true"><label for="f-web">No rellenar</label><input id="f-web" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+          <label class="full consent" for="f-ok"><input id="f-ok" name="consentimiento" type="checkbox" value="sí" required>
+            <span>He leído y acepto la <a href="privacidad.html">política de privacidad</a>.</span></label>
+          <div class="full"><button class="btn btn-gold" type="submit">Enviar solicitud</button></div>
+          <p class="full form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
-        <p class="aside">También me encuentras en <a href="#" id="ig">Instagram</a>. El formulario se conectará a tu correo cuando publiquemos la web.</p>
+        <p class="aside">El check-up es un análisis descriptivo y formativo, no una recomendación personalizada de inversión. También puedes escribirnos a <a id="mail-link" href="aviso-legal.html">nuestro correo</a>.</p>
+        <!-- PENDIENTE: enlace a Instagram cuando exista el perfil definitivo. -->
       </div>
     </div>
   </section>
-
 </main>
 
 <div class="disclaimer">
-  <div class="wrap" style="padding-top:22px;padding-bottom:22px">
-    <p>Gaba Finanzas es un proyecto de análisis y formación financiera. No está registrada en la CNMV y no presta el servicio de asesoramiento en materia de inversión. Sus contenidos y análisis tienen finalidad informativa y educativa, no constituyen una recomendación personalizada de inversión y no garantizan resultados. Invertir conlleva riesgos, incluida la posible pérdida de capital.</p>
-  </div>
+  <div class="wrap"><p>Gaba Finanzas es un proyecto de análisis y formación financiera. No está registrada en la CNMV y no presta el servicio de asesoramiento en materia de inversión. Sus contenidos y análisis tienen finalidad informativa y educativa, no constituyen una recomendación personalizada de inversión y no garantizan resultados. Invertir conlleva riesgos, incluida la posible pérdida de capital.</p></div>
 </div>
 
 <footer>
   <div class="wrap">
     <div class="foot">
       <div class="brand">
-        <a class="logo" href="#inicio"><b>Gaba</b> <span>Finanzas</span></a>
+        <a class="logo" href="index.html"><b>Gaba</b> <span>Finanzas</span></a>
         <p>Análisis y formación financiera para que entiendas tu dinero y decidas con criterio.</p>
       </div>
-      <div>
-        <h4>Navegación</h4>
-        <a href="#servicios">Servicios</a>
+      <nav aria-label="Pie: navegación">
+        <h2>Navegación</h2>
+        <a href="servicios.html">Servicios</a>
         <a href="#como-funciona">Cómo funciona</a>
-        <a href="#ejemplo">Ejemplo</a>
+        <a href="sobre.html">Sobre</a>
         <a href="recursos.html">Recursos</a>
         <a href="faq.html">FAQ</a>
-      </div>
-      <div>
-        <h4>Legal</h4>
+      </nav>
+      <nav aria-label="Pie: legal">
+        <h2>Legal</h2>
         <a href="aviso-legal.html">Aviso legal</a>
         <a href="privacidad.html">Política de privacidad</a>
         <a href="cookies.html">Política de cookies</a>
-      </div>
+        <button class="linklike" type="button" data-cookie-settings>Configurar cookies</button>
+      </nav>
     </div>
     <div class="foot-bottom">
       <span>© 2026 Gaba Finanzas</span>
@@ -436,72 +284,6 @@
   </div>
 </footer>
 
-<script>
-  // Header shadow on scroll
-  const hdr=document.getElementById('hdr');
-  addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>8));
-
-  // Mobile menu
-  const hamb=document.getElementById('hamb'), mob=document.getElementById('mobile');
-  hamb.addEventListener('click',()=>{
-    const open=mob.classList.toggle('open');
-    hamb.setAttribute('aria-expanded',open);
-  });
-  mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mob.classList.remove('open')));
-
-  // Calculator
-  const $=id=>document.getElementById(id);
-  const fmt=n=>n.toLocaleString('es-ES',{maximumFractionDigits:0})+' €';
-  function calc(){
-    const ci=+$('ci').value||0, ap=+$('ap').value||0, an=+$('an').value||0, re=(+$('re').value||0)/100;
-    const n=an*12, r=Math.pow(1+re,1/12)-1;
-    const fv = r===0 ? ci+ap*n : ci*Math.pow(1+r,n)+ap*((Math.pow(1+r,n)-1)/r);
-    const aportado=ci+ap*n;
-    $('o-ap').textContent=fmt(aportado);
-    $('o-re').textContent=fmt(Math.max(0,fv-aportado));
-    $('o-to').textContent=fmt(fv);
-  }
-  ['ci','ap','an','re'].forEach(id=>$(id).addEventListener('input',calc));
-  calc();
-
-  function handleForm(e){
-    e.preventDefault();
-    alert('Gracias. Cuando la web esté publicada, esta solicitud llegará a tu correo. De momento es una demostración.');
-    return false;
-  }
-
-  // Reveal + animate bars (respetando reduced-motion)
-  const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  const io=new IntersectionObserver((entries)=>{
-    entries.forEach(en=>{
-      if(en.isIntersecting){
-        en.target.classList.add('in');
-        if(en.target.id==='dash'&&!reduce){
-          en.target.querySelectorAll('.bar i').forEach(b=>b.style.width=b.dataset.w+'%');
-        }
-        io.unobserve(en.target);
-      }
-    });
-  },{threshold:.15});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-  if(reduce){document.querySelectorAll('.bar i').forEach(b=>b.style.width=b.dataset.w+'%');}
-</script>
-<div id="gf-ck" role="dialog" aria-label="Aviso de cookies" style="display:none;position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:520px;margin:0 auto;background:#fff;border:1px solid #E4E8EB;border-radius:14px;box-shadow:0 10px 40px rgba(22,50,79,.18);padding:20px 22px;font-family:'Inter',system-ui,sans-serif">
-<p style="margin:0 0 14px;font-size:14px;color:#28323C;line-height:1.55">Usamos cookies anal&iacute;ticas (Google Analytics) para entender c&oacute;mo se usa la web. Solo se activan si las aceptas. <a href="cookies.html" style="color:#16324F;font-weight:600">M&aacute;s informaci&oacute;n</a>.</p>
-<div style="display:flex;gap:10px;justify-content:flex-end">
-<button id="gf-rej" style="cursor:pointer;font:500 14px Inter,sans-serif;padding:9px 16px;border-radius:9px;border:1px solid #E4E8EB;background:#fff;color:#16324F">Rechazar</button>
-<button id="gf-acc" style="cursor:pointer;font:500 14px Inter,sans-serif;padding:9px 16px;border-radius:9px;border:0;background:#C8A15A;color:#16324F">Aceptar</button>
-</div></div>
-<script>
-(function(){var GA_ID="G-XXXXXXXXXX";/* <-- Sustituye por tu ID de Google Analytics */
-function gv(k){try{return localStorage.getItem(k)}catch(e){return null}}
-function sv(k,v){try{localStorage.setItem(k,v)}catch(e){}}
-function loadGA(){if(!GA_ID||GA_ID.indexOf("XXXX")!==-1)return;var s=document.createElement("script");s.async=1;s.src="https://www.googletagmanager.com/gtag/js?id="+GA_ID;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag("js",new Date());gtag("config",GA_ID);}
-var el=document.getElementById("gf-ck"),c=gv("gf-consent");
-if(c==="accepted"){loadGA();}else if(c!=="rejected"&&el){el.style.display="block";}
-var a=document.getElementById("gf-acc"),r=document.getElementById("gf-rej");
-if(a)a.onclick=function(){sv("gf-consent","accepted");if(el)el.style.display="none";loadGA();};
-if(r)r.onclick=function(){sv("gf-consent","rejected");if(el)el.style.display="none";};})();
-</script>
+<script src="assets/js/site.js" defer></script>
 </body>
 </html>
